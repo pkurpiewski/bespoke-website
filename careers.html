@@ -45,8 +45,11 @@
     <div>
       <h2 style="font-size:1.5rem;margin-bottom:6px">Apply now</h2>
       <p style="margin-bottom:24px">Tell us about yourself and attach your resume. Fields marked * are required.</p>
-      <!-- TODO: replace action with your Formspree endpoint (https://formspree.io). File uploads require a paid Formspree plan; otherwise applicants can email their resume to the address shown at right. -->
-      <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+      <!-- Form + resume upload handled by FormSubmit.co, delivered to careers@bespoke-services.com -->
+      <form action="https://formsubmit.co/careers@bespoke-services.com" method="POST" enctype="multipart/form-data">
+        <input type="hidden" name="_subject" value="New job application — Bespoke website">
+        <input type="hidden" name="_captcha" value="false">
+        <input type="hidden" name="_template" value="table">
         <div class="field">
           <label for="name">Full name *</label>
           <input id="name" name="name" type="text" placeholder="Your full name" required>
