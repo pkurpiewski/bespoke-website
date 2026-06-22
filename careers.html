@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Careers | Bespoke Commercial Services</title>
+<meta name="description" content="Join the Bespoke Commercial Services cleaning crew in Louisville, KY. Apply online and upload your resume.">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="logo-icon.svg" alt="Bespoke Commercial Services logo">
+      <span>Bespoke<small>Commercial Services</small></span>
+    </a>
+    <nav class="nav-links" id="menu">
+      <a href="index.html">Home</a>
+      <a href="services.html">Services</a>
+      <a href="about.html">About</a>
+      <a href="careers.html" class="active">Careers</a>
+      <a href="contact.html">Contact</a>
+      <a href="contact.html" class="btn btn-gold">Get a Free Quote</a>
+    </nav>
+    <button class="menu-toggle" id="toggle" aria-label="Menu"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<section class="page-head">
+  <div class="wrap">
+    <div class="crumbs"><a href="index.html">Home</a> / Careers</div>
+    <h1>Join Our Team</h1>
+    <p>We're always looking for dependable, detail-oriented people who take pride in their work. Apply below and we'll be in touch.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap contact-grid">
+    <!-- Application form -->
+    <div>
+      <h2 style="font-size:1.5rem;margin-bottom:6px">Apply now</h2>
+      <p style="margin-bottom:24px">Tell us about yourself and attach your resume. Fields marked * are required.</p>
+      <!-- TODO: replace action with your Formspree endpoint (https://formspree.io). File uploads require a paid Formspree plan; otherwise applicants can email their resume to the address shown at right. -->
+      <form action="https://formspree.io/f/your-form-id" method="POST" enctype="multipart/form-data">
+        <div class="field">
+          <label for="name">Full name *</label>
+          <input id="name" name="name" type="text" placeholder="Your full name" required>
+        </div>
+        <div class="field">
+          <label for="email">Email *</label>
+          <input id="email" name="email" type="email" placeholder="you@email.com" required>
+        </div>
+        <div class="field">
+          <label for="phone">Phone *</label>
+          <input id="phone" name="phone" type="tel" placeholder="(502) 000-0000" required>
+        </div>
+        <div class="field">
+          <label for="position">Position of interest</label>
+          <select id="position" name="position">
+            <option>Commercial Cleaner</option>
+            <option>Crew Lead / Supervisor</option>
+            <option>Crew Member</option>
+            <option>Part-time / Evenings</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="availability">Availability</label>
+          <select id="availability" name="availability">
+            <option>Evenings</option>
+            <option>Early mornings</option>
+            <option>Weekends</option>
+            <option>Flexible / Any</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="experience">Relevant experience</label>
+          <textarea id="experience" name="experience" rows="4" placeholder="Briefly describe any cleaning or related work experience, and whether you have reliable transportation."></textarea>
+        </div>
+        <div class="field">
+          <label for="resume">Upload your resume (PDF or Word)</label>
+          <input id="resume" name="resume" type="file" accept=".pdf,.doc,.docx" style="padding:10px 12px;background:#fff">
+        </div>
+        <button type="submit" class="btn btn-gold" style="width:100%;justify-content:center">Submit Application</button>
+        <p style="font-size:.82rem;margin-top:12px">By applying, you consent to be contacted about employment. We never share your information.</p>
+      </form>
+    </div>
+
+    <!-- Why work here -->
+    <div>
+      <h2 style="font-size:1.5rem;margin-bottom:20px">Why work with us</h2>
+      <ul class="checks" style="gap:16px">
+        <li><span class="tick">✓</span><span><b>Flexible schedules</b> — evening and early-morning shifts that work around your life.</span></li>
+        <li><span class="tick">✓</span><span><b>Steady, recurring work</b> with dependable hours.</span></li>
+        <li><span class="tick">✓</span><span><b>Supportive, owner-led team</b> — you'll always reach a real person.</span></li>
+        <li><span class="tick">✓</span><span><b>Room to grow</b> into crew-lead and supervisor roles.</span></li>
+        <li><span class="tick">✓</span><span><b>Local routes</b> across Louisville &amp; Jefferson County.</span></li>
+      </ul>
+
+      <div class="card" style="margin-top:24px;background:var(--bg-soft)">
+        <h3 style="margin-bottom:8px">Prefer to email?</h3>
+        <p style="font-size:.95rem">Send your resume directly to
+          <a href="mailto:careers@bespoke-services.com" style="color:var(--navy);font-weight:600">careers@bespoke-services.com</a>
+          and we'll review it right away.</p>
+      </div>
+
+      <div class="info-item" style="margin-top:24px">
+        <div class="ic">📍</div>
+        <div><b>Where we work</b><br>Louisville &amp; Jefferson County, KY</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand"><img src="logo-icon.svg" alt="">Bespoke Commercial Services</div>
+        <p style="max-width:300px">Reliable, tailored commercial cleaning for offices, gyms, and retail across the Louisville area.</p>
+      </div>
+      <div><h4>Company</h4><a href="about.html">About Us</a><br><a href="services.html">Services</a><br><a href="careers.html">Careers</a><br><a href="contact.html">Contact</a></div>
+      <div><h4>Services</h4><a href="services.html">Office Cleaning</a><br><a href="services.html">Gym &amp; Fitness</a><br><a href="services.html">Retail Stores</a><br><a href="services.html">Medical &amp; Professional</a></div>
+      <div><h4>Get in Touch</h4><a href="mailto:info@bespoke-services.com">info@bespoke-services.com</a><br><a href="mailto:careers@bespoke-services.com">careers@bespoke-services.com</a><br><a href="tel:+15025391169">(502) 539-1169</a></div>
+    </div>
+    <div class="foot-bottom">
+      <span>&copy; 2026 Bespoke Commercial Services. All rights reserved.</span>
+      <span>Louisville, Kentucky &bull; Bonded &amp; Insured</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  const t=document.getElementById('toggle'),m=document.getElementById('menu');
+  t&&t.addEventListener('click',()=>m.classList.toggle('open'));
+</script>
+</body>
+</html>
