@@ -1,18 +1,30 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Email Signature — Bespoke</title>
-<style>body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;margin:0;padding:40px;color:#2A3342}
-.wrap{max-width:760px;margin:0 auto}.note{font-size:14px;color:#5A6678;margin-bottom:18px;line-height:1.6}
-.box{background:#fff;border:1px solid #e4e9ef;border-radius:10px;padding:24px;display:inline-block}</style></head>
-<body><div class="wrap">
-<div class="note"><b>Your email signature.</b> Select everything inside the box below, copy it (Cmd/Ctrl+C), then paste into Gmail &rarr; Settings &rarr; See all settings &rarr; General &rarr; Signature.</div>
-<div class="box">
-<!-- Bespoke Commercial Services — email signature.
-     Open this file in a browser, select the signature block, copy it,
-     and paste into Gmail Settings > See all settings > General > Signature. -->
-<table cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;font-family:Arial,Helvetica,sans-serif;color:#2A3342;border-collapse:collapse;">
+<style>
+  body{font-family:Arial,Helvetica,sans-serif;background:#f4f6f9;margin:0;padding:40px;color:#2A3342}
+  .wrap{max-width:760px;margin:0 auto}
+  h2{color:#1B2A4A;margin:0 0 6px}
+  .note{font-size:14px;color:#5A6678;margin-bottom:16px;line-height:1.6}
+  .btn{display:inline-block;background:#1B2A4A;color:#fff;border:0;border-radius:8px;
+    padding:12px 22px;font-size:15px;font-weight:bold;cursor:pointer;margin-bottom:18px}
+  .btn:hover{background:#243a66}
+  .ok{color:#2E8B57;font-weight:bold;margin-left:12px;display:none}
+  .box{background:#fff;border:1px solid #e4e9ef;border-radius:10px;padding:24px;display:inline-block}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h2>Your email signature</h2>
+  <p class="note">Click <b>Copy signature</b> below (it copies the version with clickable links), then in Gmail go to
+    <b>Settings &rarr; See all settings &rarr; General &rarr; Signature</b>, click into the signature box, paste (Cmd/Ctrl+V), and click <b>Save Changes</b>.</p>
+  <button class="btn" id="copyBtn" onclick="copySig()">Copy signature</button>
+  <span class="ok" id="ok">Copied! Now paste into Gmail.</span>
+  <div id="sig" class="box"><table cellpadding="0" cellspacing="0" border="0" style="background:#ffffff;font-family:Arial,Helvetica,sans-serif;color:#2A3342;border-collapse:collapse;">
   <tr>
-    <!-- LEFT: text, left-aligned -->
     <td style="vertical-align:middle;text-align:left;padding:8px 28px 8px 6px;border-right:2px solid #C9A24B;">
       <div style="font-size:19px;font-weight:bold;color:#1B2A4A;line-height:1.2;">Peter Jacob</div>
       <div style="font-size:13px;color:#5A6678;padding:2px 0 10px;">Owner</div>
@@ -31,11 +43,29 @@
         </tr>
       </table>
     </td>
-    <!-- RIGHT: full primary logo (icon + wordmark) -->
     <td style="vertical-align:middle;text-align:left;padding:8px 6px 8px 28px;">
       <img src="https://bespoke-services.com/logo.png" width="294" height="103" alt="Bespoke Commercial Services" style="display:block;border:0;outline:none;">
     </td>
   </tr>
-</table>
+</table></div>
 </div>
-</div></body></html>
+<script>
+async function copySig(){
+  var node=document.getElementById('sig');
+  var html=node.innerHTML;
+  var text="Peter Jacob\nOwner\n(502) 956-1549\npeter@bespoke-services.com\nbespoke-services.com";
+  try{
+    await navigator.clipboard.write([new ClipboardItem({
+      'text/html': new Blob([html],{type:'text/html'}),
+      'text/plain': new Blob([text],{type:'text/plain'})
+    })]);
+    document.getElementById('ok').style.display='inline';
+  }catch(e){
+    var r=document.createRange(); r.selectNodeContents(node);
+    var s=window.getSelection(); s.removeAllRanges(); s.addRange(r);
+    alert('Auto-copy was blocked. The signature is now selected — press Cmd/Ctrl+C to copy, then paste into Gmail.');
+  }
+}
+</script>
+</body>
+</html>
